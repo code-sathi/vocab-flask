@@ -7,6 +7,7 @@ from services.hypernyms import hypernym_substitute
 app = Flask(__name__)
 nltk.download('wordnet')
 nltk.download('omw-1.4')
+nltk.download('punkt')
 
 @app.route("/")
 def hello_world():
