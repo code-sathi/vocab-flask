@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request,jsonify
 import nltk
 from nltk.corpus import wordnet
 from services.hyponyms import replace_with_hyponym
@@ -21,7 +21,7 @@ def synonyms(word):
 def check():
     sentence = request.args.get('sentence', type=str)
     words = request.args.get('word', type=str)
-    return substitute(sentence, words.split(','))
+    return jsonify(substitute(sentence, words.split(',')))
 
 def get_synonyms(word):
     synonyms = []
