@@ -4,6 +4,7 @@ from nltk.corpus import wordnet
 
 app = Flask(__name__)
 nltk.download('wordnet')
+nltk.download('omw-1.4')
 
 @app.route("/")
 def hello_world():
