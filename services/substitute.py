@@ -1,27 +1,9 @@
-from flask import Flask, request,jsonify
 import nltk
+
 from nltk.corpus import wordnet
-from services.hyponyms import replace_with_hyponym
+
 from services.hypernyms import hypernym_substitute
-
-app = Flask(__name__)
-nltk.download('wordnet')
-nltk.download('omw-1.4')
-nltk.download('punkt')
-
-@app.route("/")
-def hello_world():
-    return "<p>Hello, World!</p>"
-
-@app.route("/synonyms/<string:word>")
-def synonyms(word):
-    return "<p>synonyms for " + word + "</p>" + get_synonyms(word).__str__()
-
-@app.route("/substitute")
-def check():
-    sentence = request.args.get('sentence', type=str)
-    words = request.args.get('word', type=str)
-    return jsonify(substitute(sentence, words.split(',')))
+from services.hyponyms import replace_with_hyponym
 
 def get_synonyms(word):
     synonyms = []

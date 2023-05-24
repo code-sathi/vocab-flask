@@ -1,9 +1,9 @@
 import nltk
 
-nltk.download('averaged_perceptron_tagger')
-
+# nltk.download('averaged_perceptron_tagger')
 
 from nltk.corpus import wordnet
+
 
 def replace_with_hyponym(sentence):
     # Tokenize the sentence and tag each token with its part of speech
