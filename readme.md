@@ -10,4 +10,4 @@
    `pip install -r requirements.txt`
 
 4. Run locally:
-   `python app.py`
+   `flask --app hello run`

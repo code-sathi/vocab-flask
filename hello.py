@@ -11,6 +11,3 @@ app = Flask(__name__)
 # nltk.download('punkt')
 
 app.register_blueprint(main_routes_bp)
-
-if __name__ == '__main__':
-    app.run()
