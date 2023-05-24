@@ -23,4 +23,4 @@ def check():
 def pos_synonym():
     sentence = request.args.get('sentence', type=str)
     ind = request.args.get('index', type=int)
-    return get_synonym_for_word_in_sentence(sentence, ind)
+    return jsonify(get_synonym_for_word_in_sentence(sentence, ind))
